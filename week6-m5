@@ -1,0 +1,28 @@
+class EmployeeCompany {
+    String empName;
+    double salary;
+    
+    // Shared static variables
+    static String companyName = "Bright Horizon Technologies";
+    static int employeeCount = 0;
+
+    public EmployeeCompany(String empName, double salary) {
+        this.empName = empName;
+        this.salary = salary;
+        employeeCount++;
+    }
+
+    public static void printCompanyInfo() {
+        System.out.println(companyName);
+        System.out.println("Employees on record: " + employeeCount);
+    }
+
+    public static void main(String[] args) {
+        EmployeeCompany emp1 = new EmployeeCompany("Divya", 65000);
+        EmployeeCompany emp2 = new EmployeeCompany("Arjun", 30000);
+        EmployeeCompany emp3 = new EmployeeCompany("Rohan", 50000);
+
+        // Called using class name, not instances
+        EmployeeCompany.printCompanyInfo();
+    }
+}
